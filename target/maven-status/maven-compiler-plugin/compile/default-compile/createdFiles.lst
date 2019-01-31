@@ -1,0 +1,4 @@
+com\accor\wco\sample\vaultconfig\model\Hotel.class
+com\accor\wco\sample\vaultconfig\controller\HotelController.class
+com\accor\wco\sample\vaultconfig\config\ServiceConfig.class
+com\accor\wco\sample\vaultconfig\SampleVaultConfigApplication.class

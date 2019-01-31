@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-vault-app
+  labels:
+    app: demo-vault-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-vault-app
+  template:
+    metadata:
+      labels:
+        app: demo-vault-app
+    spec:
+      containers:
+      - name: demo-vault-app
+        image: localhost:5000/sample-vaultconfig2:0.4
+        ports:
+        - containerPort: 8080
+        env:
+        - name: VAULT_TOKEN
+          value: "@VAULT_TOKEN@"
+        volumeMounts:
+        - name: vault-ca
+          mountPath: /certs
+        - name: props
+          mountPath: /props
+      volumes:
+      - name: vault-ca
+        secret:
+          secretName: vault-ca2
+      - name: props
+        configMap:
+          name: spring-vault-props

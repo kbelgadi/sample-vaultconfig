@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: samplevaultconfig
+spring.cloud.vault:
+    host: vault
+    port: 8200
+    scheme: https
+    authentication: TOKEN
+    token: ${VAULT_TOKEN}
+      
