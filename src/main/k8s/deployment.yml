@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: demo-vault-app
-        image: localhost:5000/sample-vaultconfig2:0.4
+        image: localhost:5000/sample-vaultconfig:0.1
         ports:
         - containerPort: 8080
         env:
